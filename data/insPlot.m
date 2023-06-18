@@ -1,0 +1,123 @@
+A=load("wide\\wide.sins");
+[m,n]=size(A);
+
+T=A(:,1);
+B=A(:,2);
+L=A(:,3);
+H=A(:,4);
+
+VN=A(:,5);
+VE=A(:,6);
+VD=A(:,7);
+
+Yaw=A(:,8);
+Pitch=A(:,9);
+Roll=A(:,10);
+
+E=A(:,11);
+N=A(:,12);
+U=A(:,13);
+
+figure(1);
+subplot(3,1,1);
+plot(T,Yaw,'.');
+title("Yaw");
+xlabel("time");
+ylabel("°");
+grid on;
+subplot(3,1,2);
+plot(T,Pitch,'.');
+title("Pitch");
+xlabel("time");
+ylabel("°");
+grid on;
+subplot(3,1,3);
+plot(T,Roll,'.');
+title("Roll");
+xlabel("time");
+ylabel("°");
+grid on;
+
+figure(2);
+subplot(2,1,1);
+plot(T,Yaw,'.');
+title("Yaw");
+xlabel("time");
+ylabel("°");
+grid on;
+subplot(2,1,2);
+plot(T,Pitch,'.',T,Roll,'.');
+legend("Pitch","Roll");
+title("Pitch&Roll");
+xlabel("time");
+ylabel("°");
+grid on;
+
+figure(3);
+subplot(3,1,1);
+plot(T,B,'.');
+title("Lat");
+xlabel("time");
+ylabel("°");
+grid on;
+subplot(3,1,2);
+plot(T,L,'.');
+title("Lon");
+xlabel("time");
+ylabel("°");
+grid on;
+subplot(3,1,3);
+plot(T,H,'.');
+title("H");
+xlabel("time");
+ylabel("m");
+grid on;
+
+figure(4);
+subplot(3,1,1);
+plot(T,VN,'.');
+title("VN");
+xlabel("time");
+ylabel("m/s");
+grid on;
+subplot(3,1,2);
+plot(T,VE,'.');
+title("VE");
+xlabel("time");
+ylabel("m/s");
+grid on;
+subplot(3,1,3);
+plot(T,VD,'.');
+title("VD");
+xlabel("time");
+ylabel("m/s");
+grid on;
+
+figure(5);
+subplot(3,1,1);
+plot(T,E,'.');
+title("E");
+xlabel("time");
+ylabel("m");
+grid on;
+subplot(3,1,2);
+plot(T,N,'.');
+title("N");
+xlabel("time");
+ylabel("m");
+grid on;
+subplot(3,1,3);
+plot(T,U,'.');
+title("U");
+xlabel("time");
+ylabel("m");
+grid on;
+
+
+figure(6);
+plot(E,N,'.','LineWidth',3);
+title("trace");
+xlabel("E");
+ylabel("N");
+grid on;
+axis equal;
